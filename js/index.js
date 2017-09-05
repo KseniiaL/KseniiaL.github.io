@@ -281,7 +281,7 @@ async function getInfo (username) { //request information from Github API
     await fetch('https://api.github.com/users/'+username+'/followers?per_page=100')
             .then(res => res.json()
                 .then(r => {
-                    info.followers.push(r);
+                    info.followers= r;
                 }))
             .catch(function(err) {
                 console.log('Fetch Error :-S', err);
