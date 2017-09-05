@@ -129,7 +129,7 @@ input[type="button"] {
 #infinite-list {
     /* We need to limit the height and show a scrollbar */
     width: 100%;
-    height: 350px;
+    height: 330px;
     overflow: auto;
     padding: 0;
 }

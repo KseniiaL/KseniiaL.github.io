@@ -77,7 +77,6 @@ const form = document.getElementById('form'),
                 }
                 for (let i = 0; i < languages.one.length; i++) {
                     if (lang !== languages.one[i]){
-                        console.log('2');
                         languages.one.push(lang);
                         bool = true;
                         break;
@@ -279,10 +278,10 @@ async function getInfo (username) { //request information from Github API
         .catch(function(err) {
             console.log('Fetch Error :-S', err);
         });
-    await fetch('https://api.github.com/users/'+username+'/followers?page=1&per_page=100')
+    await fetch('https://api.github.com/users/'+username+'/followers?per_page=100')
             .then(res => res.json()
                 .then(r => {
-                    info.followers = r;
+                    info.followers.push(r);
                 }))
             .catch(function(err) {
                 console.log('Fetch Error :-S', err);
